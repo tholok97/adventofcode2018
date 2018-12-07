@@ -6,7 +6,6 @@ env:
 before_install:
   - brew install bash
   - brew install gnu-sed --with-default-names
-  - brew install rust
 script:
   - node generate.js
   - node difftest.js

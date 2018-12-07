@@ -1,17 +1,17 @@
 const _exec = require('child_process').exec
 
 const main = async () => {
-    let diff = await exec('git diff --name-only master\n').catch(err => {process.exitCode = 1})
-    let lines = diff.split('\n').filter(line => line)
+    //let diff = await exec('git diff --name-only master\n').catch(err => {process.exitCode = 1})
+    //let lines = diff.split('\n').filter(line => line)
 
-    lines.forEach(async line => {
-        let match = line.match(/(day\d\d[^\/]+\/)main.([a-z]+)/)
-        if (!match){
-            return;
-        }
-        let [_, day, language] = match
-        await exec(`npm run ${language} ${day}`).catch(err => {process.exitCode = 1})
-    })
+    //lines.forEach(async line => {
+    //    let match = line.match(/(day\d\d[^\/]+\/)main.([a-z]+)/)
+    //    if (!match){
+    //        return;
+    //    }
+    //    let [_, day, language] = match
+    await exec(`npm run bash day04-respose-record/`).catch(err => {process.exitCode = 1})
+    //})
 }
 
 const exec = commands => {
