@@ -72,6 +72,7 @@ function makeTest(producer) {
         let output = await producer(dirpath)
         output = output.split('\n').filter(output => output)
 
+        t.log("output: " + output + ", expected: " + expected)
         t.not(output.length, 0)
         t.true(output.length <= expected.length)
 
