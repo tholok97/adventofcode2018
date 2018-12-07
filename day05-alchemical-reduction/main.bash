@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Hello I am a change to trigger a travis build
+
 # Inspiration for $sed_pairs: https://unix.stackexchange.com/a/340080
 # NOTE: PART 2 could probably be sped up a whole lot by figuring out a way to 
 #       call sed only once. Give it one line per removed character for example?
