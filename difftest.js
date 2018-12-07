@@ -10,7 +10,9 @@ const main = async () => {
     //        return;
     //    }
     //    let [_, day, language] = match
-    await exec(`npm run bash day05-alchemical-reduction/`).catch(err => {process.exitCode = 1})
+    let day = "day05-alchemical-reduction/"
+    let language = "bash"
+    await exec(`npm run ${language} ${day}`).catch(err => {process.exitCode = 1})
     //})
 }
 
