@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# change to trigger build
+
 # Bash optimizations: 
 # - https://www.tldp.org/LDP/abs/html/optimizations.html
 # - https://medium.com/@bb49152/this-one-crazy-devops-language-you-should-learn-during-advent-of-code-32129ad25c01
