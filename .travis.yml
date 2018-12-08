@@ -1,13 +1,14 @@
-language: node_js
-node_js: "node"
-os: osx
-env:
-  - HOMEBREW_NO_AUTO_UPDATE=1
-before_install:
-  - brew install bash
-  - brew install gnu-sed --with-default-names
-  - brew install rust
-script:
-  - node generate.js
-  - node difftest.js
+sudo: required
 
+language: generic
+
+services:
+  - docker
+
+before_install:
+    - docker build -t testimage .
+    - docker run -it -d --rm --volume "${PWD}":/root --name testcontainer testimage
+
+script:
+    - docker exec -it testcontainer /bin/bash -c "node /root/generate.js"
+    - docker exec -it testcontainer /bin/bash -c "node /root/difftest.js"

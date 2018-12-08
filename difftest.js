@@ -5,11 +5,13 @@ const main = async () => {
     let lines = diff.split('\n').filter(line => line)
 
     lines.forEach(async line => {
-        let match = line.match(/(day\d\d[^\/]+\/)main.([a-z]+)/)
-        if (!match){
-            return;
-        }
-        let [_, day, language] = match
+        //let match = line.match(/(day\d\d[^\/]+\/)main.([a-z]+)/)
+        //if (!match){
+        //    return;
+        //}
+        //let [_, day, language] = match
+        let day = "day01-chronal-calibration/"
+        let language = "bash"
         await exec(`npm run ${language} ${day}`).catch(err => {process.exitCode = 1})
     })
 }
