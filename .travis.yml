@@ -10,5 +10,5 @@ before_install:
     - docker run -d --rm --volume "${PWD}":/root --name testcontainer testimage
 
 script:
-    - docker exec -it testcontainer /bin/bash -c "node /root/generate.js"
-    - docker exec -it testcontainer /bin/bash -c "node /root/difftest.js"
+    - docker exec -it testcontainer /bin/bash -c "cd /root; node generate.js"
+    - docker exec -it testcontainer /bin/bash -c "cd /root; node difftest.js"
