@@ -7,7 +7,7 @@ services:
 
 before_install:
     - docker build -t testimage .
-    - docker run -it -d --rm --volume "${PWD}":/root --name testcontainer testimage
+    - docker run -d --rm --volume "${PWD}":/root --name testcontainer testimage
 
 script:
     - docker exec -it testcontainer /bin/bash -c "node /root/generate.js"
